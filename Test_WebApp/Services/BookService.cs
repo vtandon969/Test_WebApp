@@ -40,7 +40,7 @@ namespace Test_WebApp.Services
         private static SqlConnection GetConnection()
         {
             //string connectionString = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_SqlConnectionString");
-            string connectionstring2 = "Data Source=DESKTOP-7GG6AMC\\SQLEXPRESS;Initial Catalog=BookList;Integrated Security=True;Persist Security Info=False;";
+            string connectionstring2 = "Data Source=DESKTOP-7GG6AMC\\SQLEXPRESS,1433;Initial Catalog=BookList;Integrated Security=True;Persist Security Info=False;";
             string connectionString = "Server=DESKTOP-7GG6AMC\\SQLEXPRESS;Database=BookList;Trusted_Connection=True;MultipleActiveResultSets=True";
             return new SqlConnection(connectionString);
         }
