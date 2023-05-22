@@ -27,7 +27,7 @@ namespace Test_WebApp
             }
             else
             {
-                app.UseDefaultFiles("/Index");
+                app.UseDefaultFiles("/home");
             }
             
             app.UseHttpsRedirection();
