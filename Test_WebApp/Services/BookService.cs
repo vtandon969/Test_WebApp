@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Test_WebApp.Services
 {
-    public class BookService : IBookService
+    public class BookService : IBookService 
     {
         
         public List<Book> GetBooks()
@@ -32,6 +32,7 @@ namespace Test_WebApp.Services
 
                 }
                 sqlConnection.Close();
+              sqlConnection.Dispose();
                 return _books;
             }
         }
@@ -42,7 +43,8 @@ namespace Test_WebApp.Services
             //string connectionString = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_SqlConnectionString");
             string connectionstring2 = "Data Source=DESKTOP-7GG6AMC\\SQLEXPRESS,1433;Initial Catalog=BookList;Integrated Security=True;Persist Security Info=False;";
             string connectionString = "Server=DESKTOP-7GG6AMC\\SQLEXPRESS;Database=BookList;Trusted_Connection=True;MultipleActiveResultSets=True";
-            return new SqlConnection(connectionString);
+            string connectionstring3 = "Server=tcp:vt-azure-sql.database.windows.net,1433;Initial Catalog=BookList;Persist Security Info=False;User ID=admin123;Password=Db@123456789;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            return new SqlConnection(connectionstring3);
         }
     }
 }
